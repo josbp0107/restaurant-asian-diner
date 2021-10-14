@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administracion</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../static/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../static/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../static/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../static/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+      <span class="brand-text font-weight-light">Dashboard Asian Diner</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="usuarios.html" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Usuarios
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="platos.html" class="nav-link">
+              <i class="nav-icon fas fa-utensils"></i>
+              <p>
+                Platos / Menús
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Gestion de usuarios</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active">Usuarios</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Tabla de usuarios registrados en el sitio web</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo electrónico</th>
+                    <th>Telefono</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Acción</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr>
+                    <td>Ashia</td>
+                    <td>Iwanczyk</td>
+                    <td>aiwanczyk0@printfriendly.com</td>
+                    <td>ashiiwad123</td>
+                    <td>792-456-3463</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Friedrick</td>
+                    <td>Benoist</td>
+                    <td>fbenoist1@baidu.com</td>
+                    <td>0Benoist</td>
+                    <td>316-256-6315</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="#">Editar </a>
+                        <a href="#">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Edyth</td>
+                    <td>Warne</td>
+                    <td>owarne0@networksolutions.com</td>
+                    <td>owarne0</td>
+                    <td>640-745-7662</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="#">Editar </a>
+                        <a href="#">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sioux</td>
+                    <td>Wyles</td>
+                    <td>swylesd@wisc.edu</td>
+                    <td>swylesd</td>
+                    <td>674-419-3726</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Joanie</td>
+                    <td>Ringe</td>
+                    <td>jringeb@privacy.gov.au</td>
+                    <td>jringeb</td>
+                    <td>896-992-6917</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Dwain</td>
+                    <td>Coviello</td>
+                    <td>dcoviello9@squidoo.com</td>
+                    <td>dcoviello9</td>
+                    <td>374-521-7750</td>
+                    <td>Superadministrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hiram</td>
+                    <td>Tanby</td>
+                    <td>htanby8@cbsnews.com	</td>
+                    <td>htanby8</td>
+                    <td>612-244-3568</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Wayne</td>
+                    <td>Janse</td>
+                    <td>wjanse5@washingtonpost.com	</td>
+                    <td>wjanse5</td>
+                    <td>842-756-5355</td>
+                    <td>Administrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                 
+                 
+                  <tr>
+                    <td>Meredeth</td>
+                    <td>Hess</td>
+                    <td>mhess1@mozilla.com	</td>
+                    <td>mhess1</td>
+                    <td>134-987-5140</td>
+                    <td>Superadministrador</td>
+                    <td>
+                        <a href="">Editar </a>
+                        <a href="">Eliminar</a>
+                    </td>
+                  </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Bootstrap 4 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- DataTables  & Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap4.min.js" integrity="sha512-OQlawZneA7zzfI6B1n1tjUuo3C5mtYuAWpQdg+iI9mkDoo7iFzTqnQHf+K5ThOWNJ9AbXL4+ZDwH7ykySPQc+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../static/js/dataTables.responsive.min.js"></script>
+<script src="../static/js/responsive.bootstrap4.min.js"></script>
+<script src="../static/js/dataTables.buttons.min.js"></script>
+<script src="../static/js/buttons.bootstrap4.min.js"></script>
+<script src="../static/js/jszip.min.js"></script>
+<script src="../static/js/pdfmake.min.js"></script>
+<script src="../static/js/vfs_fonts.js"></script>
+<script src="../static/js/buttons.html5.min.js"></script>
+<script src="../static/js/buttons.print.min.js"></script>
+<script src="../static/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0-rc/js/adminlte.min.js" integrity="sha512-pbrNMLSckfh8yEOr2o1RT+4zMU3Sj7+zP3BOY6nFVI/FLnjTRyubNppLbosEt4nvLCcdsEa8tmKhH3uqOYFXKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>
