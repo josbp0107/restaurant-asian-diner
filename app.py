@@ -27,8 +27,9 @@ def login():
 
 @app.route('/pedidos', methods=['POST', 'GET'])
 def pedido():
-    
-    pass
+    return render_template('pedido.html')
+   
+
 
 @app.route('/menu', methods=['POST', 'GET'])
 def menu():
@@ -45,4 +46,15 @@ def register():
         return render_template('register.html')
     else:
         return render_template('register.html')
+
+@app.route('/usuarios', methods=['POST', 'GET'])
+def usuario():
+    return render_template('usuarios.html')
+
+
+@app.route('/platos', methods=['POST', 'GET'])
+def plato():
+    return render_template('platos.html')
+
+
     

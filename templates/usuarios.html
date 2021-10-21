@@ -26,7 +26,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.html" class="nav-link">Home</a>
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
       </li>
     </ul>
   </nav>
@@ -59,7 +59,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="usuarios.html" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Usuarios
@@ -67,7 +67,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="platos.html" class="nav-link">
+            <a href="{{ url_for('plato') }}" class="nav-link">
               <i class="nav-icon fas fa-utensils"></i>
               <p>
                 Platos / Menús
@@ -92,7 +92,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
               <li class="breadcrumb-item active">Usuarios</li>
             </ol>
           </div>
