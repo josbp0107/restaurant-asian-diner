@@ -35,6 +35,17 @@ def pedido():
 def menu():
     return render_template('menu.html')
 
+@app.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method=='POST':
+        nombre = request.form['nombre']
+        usuario = request.form['usuario']
+        correo = request.form['correo']
+        clave = request.form['clave']
+        db.registrar_usuario(nombre, usuario, correo, clave,rol=3)
+        return render_template('register.html')
+    else:
+        return render_template('register.html')
 
 @app.route('/usuarios', methods=['POST', 'GET'])
 def usuario():
