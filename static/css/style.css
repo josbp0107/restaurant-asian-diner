@@ -117,10 +117,10 @@ body{
 }
 .contenido .carrousel-contenido{
     margin-left: 225px;
-    width:57%;
+    width:68%;
 }
 .glider-track{
-    width:200px;
+    width:400px;
     height:600px;
 }
 
@@ -215,8 +215,6 @@ body{
     grid-template-rows: 1fr 1fr;
 }
 
-.contenedor .widget-2 .card{
-}
 .contenedor .widget-2 .card img{
     width:100%;
     height: 250px;
