@@ -27,7 +27,8 @@ def login():
 
 @app.route('/pedidos', methods=['POST', 'GET'])
 def pedido():
-    pass
+    return render_template('pedido.html')
+   
 
 
 @app.route('/menu', methods=['POST', 'GET'])
