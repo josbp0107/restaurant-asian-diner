@@ -28,34 +28,28 @@
 
         <!--MENU-->
         <div class="nav-main__menu">
-            <a href="#" class="nav-main__link-item">
-                1
+            <a href="{{ url_for('menu') }}" class="nav-main__link-item">
+                Menu
+            </a>
+            <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
+                Perfil
             </a>
             <a href="#" class="nav-main__link-item">
-                2
+                Platos deseados
             </a>
             <a href="#" class="nav-main__link-item">
-                3   
+                Pedidos
             </a>
-            <a href="#" class="nav-main__link-item">
-                4
+            <a href="{{ url_for('usuario') }}" class="nav-main__link-item">
+                Gestionar Usuarios
             </a>
-            <a href="#" class="nav-main__link-item">
-                5
-            </a>
-            <a href="#" class="nav-main__link-item">
-                6
-            </a>
-            <a href="#" class="nav-main__link-item">
-                7
-            </a>
-            <a href="#" class="nav-main__link-item">
-                8
+            <a href="platos" class="nav-main__link-item">
+                Gestionar Platos
             </a>
         </div>
         <!--LOGO-->
         <div class="logo">
-            <a href="#" class="logoicono">
+            <a href="{{ url_for('index') }}" class="logoicono">
                 <img src="../static/images/imagesindex/login/icono.png" alt="logo" class="logoredirect">
             </a>
         </div>
@@ -64,7 +58,7 @@
         </div>
         <!-- Login-->
         <div class="ingresarlogin">
-            <a href="#" class="logologin">
+            <a href="{{ url_for('login') }}" class="logologin">
                 <i class="fas fa-sign-in-alt"></i>
             </a>
         </div>
