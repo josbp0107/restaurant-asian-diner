@@ -19,8 +19,14 @@ def login():
         usuario = request.form['usuario']
         correo = request.form['correo']
         clave = request.form['clave']
-        db.registrar_usuario(nombre, usuario, correo, clave)
+        db.registrar_usuario(nombre, usuario, correo, clave,rol=3)
         return render_template('login.html')
     else:
         return render_template('login.html')
+
+
+@app.route('/pedidos', methods=['POST', 'GET'])
+def pedido():
+    
+    pass
     

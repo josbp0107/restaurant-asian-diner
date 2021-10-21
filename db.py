@@ -2,10 +2,10 @@ import sqlite3
 import hashlib
 
 
-def registrar_usuario(nombre, usuario, correo, clave):
+def registrar_usuario(nombre, usuario, correo, clave, rol):
     with sqlite3.connect("restaurante.db") as con:
         cur = con.cursor()
-        cur.execute('INSERT INTO usuarios(id,nombre,correo,usuario,clave) VALUES (null,?,?,?,?)', (nombre, correo, usuario, hashlib.sha1(clave.encode()).hexdigest())) 
+        cur.execute('INSERT INTO usuarios(id,nombre,correo,usuario,clave,rol) VALUES (null,?,?,?,?,?)', (nombre, correo, usuario, hashlib.sha1(clave.encode()).hexdigest(),rol)) 
         con.commit()
 
 def check_password(hashed_clave, usuario_clave):
