@@ -8,11 +8,11 @@
     <title>Sign up/Sign in</title>
 </head>
 <body>
-    <iframe src="layout.html" frameborder="0" class="lay"></iframe>
+    {% include 'layout.html'%}
     <div class="maincontainer">
         <div class="contenedor2">
             <div class="imagenlogin">
-                <img src="../static/images/login/loginimage.png" alt="Login image" class="loginimage">
+                <img src="../static/images/imagesindex/login/loginimage.png" alt="Login image" class="loginimage">
             </div> 
             <div class="logincontainer">
                 <div class="login">
@@ -21,6 +21,11 @@
                     <input type="password" placeholder="Contraseña" class="passwordLog">
                     <input type="submit" class="submit" value="Iniciar Sesion">
                 </div>
+                
+            </div>
+            <div class="registersetting">
+                <p>¿No tienes cuenta?</p>
+                <a href="{{url_for('register')}}">Registrarse</a>
             </div>
     </div>
     </div>

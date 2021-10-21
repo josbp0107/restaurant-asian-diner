@@ -24,12 +24,12 @@
             <h2>Pei Wei </br>Asian Diner</h2>
         </header>
         <div class="widget-1">
-                <a href="#" class="btn">Destacados</a>
-                <a href="#" class="btn">Menú</a>
-                <a href="#" class="btn">Contáctanos</a>
+                <a href="#carrousel" class="btn">Destacados</a>
+                <a href="#menusection" class="btn">Menú</a>
+                <a href="#footer" class="btn">Contáctanos</a>
         </div>
         <div class="contenido">
-            <div class="carrousel">
+            <div class="carrousel" id="carrousel">
                 <h2>Destacados de la semana</h2>
                 <div class="carrousel-contenido">
                     <button aria-label="anterior" class="carrouselanterior">
@@ -92,7 +92,7 @@
         <aside class="sidebar">
         </aside>
         
-        <div class="widget-2">
+        <div class="widget-2" id="menusection">
             <h2>Menu</h2>
             <div class="card">
                 <img src="../static/images/imagesindex/descarga.jpg" alt="Arroz-Frito">
@@ -146,7 +146,7 @@
                 <a href="{{ url_for('menu') }}">Ver menú completo</a>
             </div>
             </div>
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <h3>Footer</h3>
         </footer>
         </div>
