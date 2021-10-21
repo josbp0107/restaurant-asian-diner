@@ -116,7 +116,8 @@ body{
     border:1px solid black;
 }
 .contenido .carrousel-contenido{
-    width:91.9%;
+    margin-left: 140px;
+    width:72%;
 }
 .glider-track{
     width:200px;
@@ -139,7 +140,7 @@ body{
     align-self: center;
     color:white;
     grid-area:header;
-    background:url(../images/fondo.jpg) center/cover;
+    background:url(../images/imagesindex/fondo.jpg) center/cover;
     height:550px;
     padding-bottom:50px;
     display:flex;
@@ -189,7 +190,7 @@ body{
 
 
 .contenedor .sidebar{
-    background:url(../images/header.jpg) center/cover;
+    background:url(../images/imagesindex/header.jpg) center/cover;
     text-align:center;
     display:flex;
     align-items:center;
@@ -211,12 +212,28 @@ body{
     gap:25px;
     margin:10px 0;
     grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+.contenedor .widget-2 .card{
 }
 .contenedor .widget-2 .card img{
     width:100%;
     height: 250px;
 }
 
+.contenedor .widget-2 h2{
+    width: 95%;
+    grid-column:1/-1 ;
+    margin-left: auto;
+    padding:25px;
+    font-size:50px;
+    color:#c2c2c2;
+    background:var(--color-red);
+    border-radius:30px;
+    align-items: center;
+    justify-items: center;
+}
 .contenedor .footer{
     background:#12203e;
     color:white;
