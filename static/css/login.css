@@ -11,6 +11,7 @@ body{
     background:black;
     padding:3px;
     border-radius:25px;
+    margin-top:100px;
 }
 .maincontainer{
     width:100%;
@@ -129,4 +130,11 @@ background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox=
 
 .login .input:active,.login .input:focus{
     outline:none;
+}
+
+.lay{
+    width:100% !important;
+    margin-bottom:0;
+    height: 800px;
+    position: absolute;
 }

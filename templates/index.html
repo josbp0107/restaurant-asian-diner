@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
       integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.css">
     <script src="static/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
     <title>Pei Wei Asian Diner</title>
 </head>
 <div>
+    <iframe src="layout.html" frameborder="0" class="lay"></iframe>
     <div class="contenedor">
         <header class="header">
             <h2>Pei Wei </br>Asian Diner</h2>
@@ -25,36 +28,64 @@
                 <a href="#" class="btn">Contáctanos</a>
         </div>
         <div class="contenido">
-            <div class="contenido-controles">
-                <h3>Destacados</h3>
-                <div class="indicadores">
-                </div>
-            </div>
-            <div class="contenido-principal">
-                <button role="button" id="flechaizquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-                <div class="contenido-carrousel">
-                    <div class="carrousel">
-                        <div class="carta">
-                            <a href="#"><img src="static/images/arrozfrito.jpg" alt=""></a>
+            <div class="carrousel">
+                <h2>Destacados de la semana</h2>
+                <div class="carrousel-contenido">
+                    <button aria-label="anterior" class="carrouselanterior">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="elementos_lista">
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/sushi.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
-                        <div class="carta">
-                            <a href="#"><img src="static/images/ensaladafrutastropicales.jpg" alt=""></a>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/ensaladafrutastropicales.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
-                        <div class="carta">
-                            <a href="#"><img src="static/images/postrelocodetaiwan.jpg" alt=""></a>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/padthai.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
-                        <div class="carta">
-                            <a href="#"><img src="static/images/roticanai.jpg" alt=""></a>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/pastelnata.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
-                        <div class="carta">
-                            <a href="#"><img src="static/images/pastelnata.jpg" alt=""></a>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/postrelocodetaiwan.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
-                        <div class="carta">
-                            <a href="#"><img src="static/images/sushi.jpg" alt=""></a>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/ensaladafrutastropicales.jpg" alt="sushi">
+                            <p>descripcion</p>
+                        </div>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/ensaladafrutastropicales.jpg" alt="sushi">
+                            <p>descripcion</p>
+                        </div>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/ensaladafrutastropicales.jpg" alt="sushi">
+                            <p>descripcion</p>
+                        </div>
+                        <div class="elemento">
+                            <h2 class = "tituloimg">TITULO</h2>
+                            <img src="static/images/ensaladafrutastropicales.jpg" alt="sushi">
+                            <p>descripcion</p>
                         </div>
                     </div>
+                    <button aria-label="siguiente" class="carrouselsiguiente">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-                <button role="button" id="flechaderecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
+                <div role="tablist" class="indicadores"></div>
             </div>
         </div>
         <aside class="sidebar">

@@ -25,6 +25,7 @@ body{
     width:95%;
     max-width:6000px;
     margin: 20px auto;
+    padding-top: 125px;
     display: grid;
     grid-gap:20px;
     grid-template-columns: repeat(3,1fr);
@@ -38,6 +39,93 @@ body{
                         "footer footer footer"
     ;
 }
+.contenedor .contenido{
+    grid-area:contenido;
+    margin-bottom:70px;  
+}
+
+.contenedor .contenido .carrousel{
+    position:relative;
+    padding-right:30px;
+    
+}
+.carrouselanterior,.carrouselsiguiente{
+    position:absolute;
+    width: 60px;
+    height: 50%;
+    border: none;
+    top: calc(35% - 35px);
+    cursor: pointer;
+    line-height: 20px;
+    background: none;
+    font-size: 20px;
+    color:black;
+    opacity:20%;
+}
+.carrouselanterior:hover,.carrouselsiguiente:hover{
+    opacity:100%;
+}
+.carrouselanterior{
+    left: 5px;
+}
+.carrouselsiguiente{
+    right: 5px;
+}
+
+
+.indicadores .glider-dot{
+    display:block;
+    width:30px;
+    height:5px;
+    background:#000000;
+    opacity: .2;
+    border-radius: 0;
+}
+
+.elementos-lista{
+    overflow: hidden;
+}
+
+.carrousel h2{
+    width: 95%;
+    margin-left: auto;
+    padding:25px;
+    font-size:50px;
+    color:#c2c2c2;
+    background:var(--color-red);
+    border-radius:30px;
+    align-items: center;
+    justify-items: center;
+
+}
+.elemento h2{
+    font-size: 25px;
+    color: var(--color-dark);
+    background: none;
+}
+.contenido .carrousel-contenido .elementos-lista{
+    margin:0;
+    padding:0;
+}
+
+
+.contenido .carrousel-contenido .elemento{
+    margin:10px;
+    padding:20px;
+    background:#f6f6f6;
+    border:1px solid black;
+}
+.contenido .carrousel-contenido{
+    width:91.9%;
+}
+.glider-track{
+    width:200px;
+    height:600px;
+}
+
+
+
+
 
 .contenedor div,.contenedor .header,.contenedor .sidebar,.contenedor .footer{
     background:#fff;
@@ -46,9 +134,11 @@ body{
 }
 
 .contenedor .header{
+    width:80%;
+    justify-self: center;
+    align-self: center;
     color:white;
     grid-area:header;
-    width:100%;
     background:url(../images/fondo.jpg) center/cover;
     height:550px;
     padding-bottom:50px;
@@ -92,87 +182,11 @@ body{
 .contenedor .contenido{
     grid-area:contenido;
     margin-bottom:70px;   
+    margin:20px;
+    padding:0;
 }
 
-.contenedor .contenido .contenido-principal{
-    display:flex;
-    align-items:center;
-    position:relative;
-}
 
-.contenedor .contenido .contenido-principal .flecha-izquierda, .contenedor .contenido .contenido-principal .flecha-derecha{
-    position:absolute;
-    border: none;
-    background: rgba(0,0,0,.3);
-    font-size: 40px;
-    height: 50%;
-    top: calc(50%-25%);
-    line-height: 40px;
-    width: 50px;
-    color:white;
-    cursor: pointer;
-    z-index:500;
-    transition: .2s ease all;
-}
-
-.contenedor .contenido .contenido-principal .flecha-izquierda{
-    left:0;
-}
-.contenedor .contenido .contenido-principal .flecha-derecha{
-    right:0;
-}
-.contenedor .contenido .contenido-principal .flecha-izquierda:hover, .contenedor .contenido .contenido-principal .flecha-derecha:hover{
-    background:rgba(0, 0, 0, .9);
-}
-
-.contenedor .contenido .contenido-controles{
-    display:flex;
-    justify-content:space-between;
-    align-items: end;
-}
-
-.contenedor .contenido .contenido-controles h3{
-    color:black;
-    font-size:30px;
-}
-/* .contenedor .contenido .contenido-controles .indicadores button {
-    background:black;
-    height: 3px;
-    width: 10%;
-    cursor:pointer;
-    border: none;
-    margin-right:2px;
-}
-.contenedor .contenido .contenido-controles .indicadores button:hover, .contenedor .contenido .contenido-controles .indicadores button.activp{
-    background:red;   
-} */
-
-
-.contenedor .contenido .contenido-principal .contenido-carrousel {
-    width:100%;
-    padding:20px 0;
-    overflow-x:scroll;
-    scroll-behavior: smooth;
-}
-.contenedor .contenido .contenido-principal .contenido-carrousel .carrousel{
-    display:flex;
-    flex-wrap: nowrap;
-}
-.contenedor .contenido .contenido-principal .contenido-carrousel .carrousel .carta {
-    min-width:25%;
-    transition: .3s ease all;
-    box-shadow: var(--box-shadow);
-
-}
-.contenedor .contenido .contenido-principal .contenido-carrousel .carrousel .carta img{
-    width:100%;
-    vertical-align: top;
-}
-
-.contenedor .contenido .contenido-principal .contenido-carrousel .carrousel .carta.hover{
-    transform: scale(1.2);
-    transform-origin: center;
-}
 
 .contenedor .sidebar{
     background:url(../images/header.jpg) center/cover;
@@ -210,3 +224,9 @@ body{
     /* grid-column: 1/4; */
 }
 
+.lay{
+    width:100% !important;
+    margin-bottom:0;
+    height: 800px;
+    position: absolute;
+}
