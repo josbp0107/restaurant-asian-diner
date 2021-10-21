@@ -29,4 +29,8 @@ def login():
 def pedido():
     
     pass
+
+@app.route('/menu', methods=['POST', 'GET'])
+def menu():
+    return render_template('menu.html')
     
