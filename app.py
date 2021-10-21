@@ -27,10 +27,22 @@ def login():
 
 @app.route('/pedidos', methods=['POST', 'GET'])
 def pedido():
-    
     pass
+
 
 @app.route('/menu', methods=['POST', 'GET'])
 def menu():
     return render_template('menu.html')
+
+
+@app.route('/usuarios', methods=['POST', 'GET'])
+def usuario():
+    return render_template('usuarios.html')
+
+
+@app.route('/platos', methods=['POST', 'GET'])
+def plato():
+    return render_template('platos.html')
+
+
     
