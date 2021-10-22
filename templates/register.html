@@ -8,21 +8,21 @@
     <title>Sign up/Sign in</title>
 </head>
 <body>
-    <iframe src="layout.html" frameborder="0" class="lay"></iframe>
+    {% include 'layout.html' %}
     <div class="maincontainer">
         <div class="contenedor2">
             <div class="imagenlogin">
-                <img src="../static/images/login/loginimage.png" alt="Login image" class="loginimage">
+                <img src="../static/images/imagesindex/login/loginimage.png" alt="Login image" class="loginimage">
             </div> 
             <div class="logincontainer">
                 <div class="register">
                     <h2>Registrarse</h2>
-                    <form action="">
-                        <input type="text" placeholder="Nombre completo" class="nombre">
-                        <input type="text" placeholder="Nickname" class="nombreUsuario">
-                        <input type="text" placeholder="Correo" class="correo">
-                        <input type="password" placeholder="Contraseña" class="password">
-                        <input type="password" placeholder="Confirmar contraseña" class="repass">
+                    <form action="" method="POST">
+                        <input type="text" placeholder="Nombre completo" class="nombre" id="nombre" name="nombre">
+                        <input type="text" placeholder="Nickname" class="nombreUsuario"  name="usuario">
+                        <input type="text" placeholder="Correo" class="correo" name="correo">
+                        <input type="password" placeholder="Contraseña" class="password" name="clave">
+                        <input type="password" placeholder="Confirmar contraseña" class="repass" name="confirmar">
                         <input type="submit" class="submit" value="Registrate">
                     </form>
                 </div>
