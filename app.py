@@ -34,15 +34,14 @@ def login():
             return render_template('index.html')
         else:
             return render_template('login.html')
-            
     else:
         return render_template('login.html')
     
 @app.route('/logout')
 def logout():
     if 'usuario' in session:
-        session.pop('user')
-    return redirect(url_for('menu'))
+        session.pop('usuario')
+    return redirect(url_for('index'))
 
     
 @app.route('/register', methods=['POST', 'GET'])

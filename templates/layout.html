@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,11 +57,17 @@
             
         </div>
         <!-- Login-->
-        <div class="ingresarlogin">
-            <a href="{{ url_for('login') }}" class="logologin">
-                <i class="fas fa-sign-in-alt"></i>
-            </a>
-        </div>
+        {% if "usuario" in session %}
+                <a href="{{ url_for('logout') }}" class="logologin">
+                    Cerrar sesion
+                </a>
+        {% else %}
+            <div class="ingresarlogin">
+                <a href="{{ url_for('login') }}" class="logologin">
+                    <i class="fas fa-sign-in-alt"></i>
+                </a>
+            </div>
+        {% endif %}
     </nav>
 </body>
 </html>
