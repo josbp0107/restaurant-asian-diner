@@ -27,7 +27,7 @@ def wthigo(usuario,clave):
                 session['usuario'] = usuarios[0][3]
                 session['rol'] = usuarios[0][5]
             return True
-
+ 
 
 
 
