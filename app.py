@@ -64,6 +64,7 @@ def usuario():
 
 @app.route('/platos', methods=['POST', 'GET'])
 def plato():
+    db.mostrar_platos()
     return render_template('platos.html')
 
 
