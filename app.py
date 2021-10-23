@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect, request,session
+from flask import Flask, render_template, url_for, redirect, request,session,flash
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
@@ -29,8 +29,12 @@ def login():
     if request.method=='POST':
         usuario = request.form['nombre2']
         clave = request.form['password2']
-        db.wthigo(usuario, clave)
-        return render_template('index.html')
+        
+        if db.wthigo(usuario, clave) == True:
+            return render_template('index.html')
+        else:
+            return render_template('login.html')
+            
     else:
         return render_template('login.html')
     
