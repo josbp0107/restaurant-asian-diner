@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # Data base file
-.db
+restaurante.db
 
 # Distribution / packaging
 .Python
