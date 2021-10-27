@@ -131,17 +131,19 @@
                   </thead>
 
                   <tbody>
-                  <tr>
-                    <td>ASIAN CRUNCH</td>
-                    <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
-                    <td>6 bocados de arroz crocante envueltos en salmón fresco con salsa divorcio.</td>
-                    <td>$10.000</td> 
-                    <td>
-                        <a href="">Editar </a>
-                        <a href="">Eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
+                    {% for plato in platos %}
+                      <tr>
+                        <td>{{plato.1}}</td>
+                        <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
+                        <td>{{plato.2}}</td>
+                        <td>${{plato.4}}</td>
+                        <td>
+                            <a href="">Editar </a>
+                            <a href="">Eliminar</a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  <!-- <tr>
                     <td>KANI ESPECIAL</td>
                     <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
                     <td>Crujientes bastones de kani con queso crema, queso parmesano y salsa de anguila.</td>
@@ -180,7 +182,7 @@
                         <a href="">Editar </a>
                         <a href="">Eliminar</a>
                     </td>
-                  </tr>
+                  </tr> -->
                   
                   </tbody>
                 </table>

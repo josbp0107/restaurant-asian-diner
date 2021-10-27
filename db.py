@@ -34,6 +34,12 @@ def mostrar_platos():
         cur = con.cursor()
         cur.execute('SELECT * FROM platos' )
         platos = cur.fetchall() 
+        return platos
+
+def eliminar_plato():
+    with sqlite3.connect("restaurante.db") as con:
+        cur = con.cursor()
+        cur.execute('DELETE * FROM platos WHERE id = ?' (id) )
         
             
  

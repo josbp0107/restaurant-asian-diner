@@ -8,6 +8,7 @@ import db
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -64,8 +65,14 @@ def usuario():
 
 @app.route('/platos', methods=['POST', 'GET'])
 def plato():
-    db.mostrar_platos()
-    return render_template('platos.html')
+    platos = db.mostrar_platos()
+    print(platos)
+    return render_template('platos.html', platos=platos)
+
+
+@app.route('/platos/eliminar/<id>')
+def platos_eliminar(id):
+    pass
 
 
     
