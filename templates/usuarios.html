@@ -114,18 +114,30 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
-                    <th>Apellido</th>
                     <th>Correo electrónico</th>
-                    <th>Telefono</th>
-                    <th>Usuario</th>
+                    <th>Usuario</th>  
                     <th>Rol</th>
                     <th>Acción</th>
                   </tr>
                   </thead>
 
                   <tbody>
-                  <tr>
+                    {% for US in usuarioscall %}
+                    <tr>
+                      <td>{{US[0]}}</td>
+                      <td>{{US[1]}}</td>
+                      <td>{{US[2]}}</td>
+                      <td>{{US[3]}}</td>
+                      <td>{{US[5]}}</td>
+                      <td>
+                        <a href="{{url_for('deleteUserCall', id=US[0])}}">Eliminar </a>
+                        <a href="{{url_for('editUserCall', id=US[0])}}">Editar </a>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  <!-- <tr>
                     <td>Ashia</td>
                     <td>Iwanczyk</td>
                     <td>aiwanczyk0@printfriendly.com</td>
@@ -233,7 +245,7 @@
                         <a href="">Editar </a>
                         <a href="">Eliminar</a>
                     </td>
-                  </tr>
+                  </tr> -->
                   
                   </tbody>
                 </table>
