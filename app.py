@@ -70,9 +70,24 @@ def plato():
     return render_template('platos.html', platos=platos)
 
 
+@app.route('/platos/add', methods=['POST', 'GET'])
+def agregar_platos():
+    if request.method == 'POST':
+        plato = request.form['plato']
+        descripcion = request.form['descripcion']
+        precio = float(request.form['precio'])
+        print(plato)
+        db.agregar_plato(plato, descripcion, precio)
+        return redirect(url_for('plato'))
+        #return render_template('platos.html')
+    else:
+        return render_template('agregarPlato.html')
+
 @app.route('/platos/eliminar/<id>')
 def platos_eliminar(id):
-    pass
+    db.eliminar_plato(id)
+    return redirect(url_for('plato'))
+
 
 
     

@@ -115,7 +115,10 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tabla de usuarios registrados en el sitio web</h3>
+                <div class="d-flex bd-highlight">
+                  <h3 class="p-2 flex-grow-1 bd-highlight card-title">Tabla de usuarios registrados en el sitio web</h3>
+                  <a href="{{ url_for('agregar_platos') }}" type="button" class="p-2 bd-highlight btn btn-app"><i class="fas fa-plus-circle"></i> Agregar plato</a>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -138,8 +141,13 @@
                         <td>{{plato.2}}</td>
                         <td>${{plato.4}}</td>
                         <td>
-                            <a href="">Editar </a>
-                            <a href="">Eliminar</a>
+                          
+                            <a href="">
+                              <i class="fa fa-edit "></i>
+                            </a>
+                            <a href="/platos/eliminar/{{plato.0}}"> 
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
                         </td>
                       </tr>
                     {% endfor %}
@@ -230,6 +238,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0-rc/js/adminlte.min.js" integrity="sha512-pbrNMLSckfh8yEOr2o1RT+4zMU3Sj7+zP3BOY6nFVI/FLnjTRyubNppLbosEt4nvLCcdsEa8tmKhH3uqOYFXKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
