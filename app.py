@@ -69,31 +69,23 @@ def usuario():
         return render_template('usuarios.html', usuarioscall=usuarioscall)
     
 
-@app.route('/editUserCall', methods=['GET', 'POST'])
-def editUserCall():
+@app.route('/editUserCall/<id>', methods=['GET', 'POST'])
+def editUserCall(id):
     print("-------------------------------------------")
     with sqlite3.connect("restaurante.db") as con:
-        id = request.args.get('id')
         if request.method == 'GET':
-            id = request.args.get('id')
-            print(id)
-            cur = con.cursor()
-            cur.execute(f'SELECT * FROM usuarios WHERE id = {id}')        
-            usercalled = cur.fetchall()[0]
-            return render_template('editUserCall.html', usercalled=usercalled)
+            idn = id
+            return render_template('editUserCall.html', idn = idn)
         if request.method == 'POST':
-            id = request.args.get('id')
-            print(id)
             cur = con.cursor()
             nombre = request.form['nombreED']
             correo = request.form['correoED']
             usuario = request.form['usuarioED']
             rol = request.form['rolED']
-            cur.execute("UPDATE usuarios SET nombre = ?, correo = ?, usuario = ?, rol = ? WHERE id = ?",(nombre, correo, usuario, rol, id))  
+            cur.execute(f"UPDATE usuarios SET nombre = ?, correo = ?, usuario = ?, rol = ? WHERE id = {id}",(nombre, correo, usuario, rol))  
             con.commit()
             print("hola")         
         return redirect(url_for('usuario'))
-
 
 
 @app.route('/deleteUserCall', methods=['GET', 'POST'])
@@ -134,15 +126,15 @@ def platos_eliminar(id):
 
 @app.route('/platos/editar/<id>', methods=['POST', 'GET'])
 def editar_plato(id):
-    # if request.method == 'GET':
+    if request.method == 'GET':
         
-    #     return render_template('editarPlato.html')
-    # elif request.method == 'POST':
-    #     plato = request.form['plato']
-    #     descripcion = request.form['descripcion']
-    #     precio = float(request.form['precio'])
-    #     db.editar_plato(id,plato,descripcion,precio)
-    #     return redirect(url_for('plato'))
+        return render_template('editarPlato.html')
+    if request.method == 'POST':
+        plato = request.form['plato']
+        descripcion = request.form['descripcion']
+        precio = float(request.form['precio'])
+        db.editar_plato(id,plato,descripcion,precio)
+        return redirect(url_for('plato'))
 
     return render_template('editarPlato.html')
 
