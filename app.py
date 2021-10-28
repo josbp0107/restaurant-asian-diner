@@ -10,6 +10,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -110,8 +111,40 @@ def deleteUserCall():
 
 @app.route('/platos', methods=['POST', 'GET'])
 def plato():
-    db.mostrar_platos()
-    return render_template('platos.html')
+    platos = db.mostrar_platos()
+    return render_template('platos.html', platos=platos)
+
+
+@app.route('/platos/add', methods=['POST', 'GET'])
+def agregar_platos():
+    if request.method == 'POST':
+        plato = request.form['plato']
+        descripcion = request.form['descripcion']
+        precio = float(request.form['precio'])
+        db.agregar_plato(plato, descripcion, precio )
+        return redirect(url_for('plato'))
+    else:
+        return render_template('agregarPlato.html')
+
+@app.route('/platos/eliminar/<id>')
+def platos_eliminar(id):
+    db.eliminar_plato(id)
+    return redirect(url_for('plato'))
+
+
+@app.route('/platos/editar/<id>', methods=['POST', 'GET'])
+def editar_plato(id):
+    # if request.method == 'GET':
+        
+    #     return render_template('editarPlato.html')
+    # elif request.method == 'POST':
+    #     plato = request.form['plato']
+    #     descripcion = request.form['descripcion']
+    #     precio = float(request.form['precio'])
+    #     db.editar_plato(id,plato,descripcion,precio)
+    #     return redirect(url_for('plato'))
+
+    return render_template('editarPlato.html')
 
 
     

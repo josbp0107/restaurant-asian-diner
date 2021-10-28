@@ -101,7 +101,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
-              <li class="breadcrumb-item active">Usuarios</li>
+              <li class="breadcrumb-item active">Platos</li>
             </ol>
           </div>
         </div>
@@ -115,7 +115,10 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Tabla de usuarios registrados en el sitio web</h3>
+                <div class="d-flex bd-highlight">
+                  <h3 class="p-2 flex-grow-1 bd-highlight card-title">Tabla de usuarios registrados en el sitio web</h3>
+                  <a href="{{ url_for('agregar_platos') }}" type="button" class="p-2 bd-highlight btn btn-app"><i class="fas fa-plus-circle"></i> Agregar plato</a>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -131,17 +134,23 @@
                   </thead>
 
                   <tbody>
-                  <tr>
-                    <td>ASIAN CRUNCH</td>
-                    <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
-                    <td>6 bocados de arroz crocante envueltos en salmón fresco con salsa divorcio.</td>
-                    <td>$10.000</td> 
-                    <td>
-                        <a href="">Editar </a>
-                        <a href="">Eliminar</a>
-                    </td>
-                  </tr>
-                  <tr>
+                    {% for plato in platos %}
+                      <tr>
+                        <td>{{plato.1}}</td>
+                        <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
+                        <td>{{plato.2}}</td>
+                        <td>${{plato.4}}</td>
+                        <td>
+                            <a href="/platos/editar/{{ plato.0 }}">
+                              <i class="fa fa-edit"></i>
+                            </a> | 
+                            <a href="/platos/eliminar/{{ plato.0 }}"> 
+                              <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  <!-- <tr>
                     <td>KANI ESPECIAL</td>
                     <td><img src="https://cdn7.kiwilimon.com/recetaimagen/36725/640x426/th5-640x426-45808.jpg.webp" alt="" ></td>
                     <td>Crujientes bastones de kani con queso crema, queso parmesano y salsa de anguila.</td>
@@ -180,7 +189,7 @@
                         <a href="">Editar </a>
                         <a href="">Eliminar</a>
                     </td>
-                  </tr>
+                  </tr> -->
                   
                   </tbody>
                 </table>
@@ -228,6 +237,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.2.0-rc/js/adminlte.min.js" integrity="sha512-pbrNMLSckfh8yEOr2o1RT+4zMU3Sj7+zP3BOY6nFVI/FLnjTRyubNppLbosEt4nvLCcdsEa8tmKhH3uqOYFXKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Page specific script -->
 <script>
   $(function () {
