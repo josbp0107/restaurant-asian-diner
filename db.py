@@ -27,6 +27,11 @@ def wthigo(usuario,clave):
                 session['usuario'] = usuarios[0][3]
                 session['rol'] = usuarios[0][5]
             return True
+    
+
+
+
+
 
 
 def mostrar_platos():
@@ -50,8 +55,6 @@ def eliminar_plato(id):
         cur.execute(f'DELETE FROM platos WHERE id ={id} ')
         con.commit()
         
-            
- 
 
 
 
