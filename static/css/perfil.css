@@ -1,0 +1,26 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+
+:root {
+  --rojo: #b61a1a;
+  --azul: #196767;
+}
+.wrapper {
+  height: 100vh;
+  background-color: var(--azul);
+}
