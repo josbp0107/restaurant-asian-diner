@@ -54,7 +54,16 @@ def eliminar_plato(id):
         cur = con.cursor()
         cur.execute(f'DELETE FROM platos WHERE id ={id} ')
         con.commit()
-        
+
+
+def editar_plato(id,plato, descripcion, precio):
+    with sqlite3.connect("restaurante.db") as con:
+        cur = con.cursor()
+        cur.execute(f'UPDATE platos SET plato=?, descripcion=?, imagen=?, precio=?, id_disponiblidad=? WHERE id={id}', (plato, descripcion, 'imagen', precio,1))
+        con.commit()
+      
+
+
 
 
 

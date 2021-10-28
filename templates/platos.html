@@ -101,7 +101,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
-              <li class="breadcrumb-item active">Usuarios</li>
+              <li class="breadcrumb-item active">Platos</li>
             </ol>
           </div>
         </div>
@@ -141,11 +141,10 @@
                         <td>{{plato.2}}</td>
                         <td>${{plato.4}}</td>
                         <td>
-                          
-                            <a href="">
-                              <i class="fa fa-edit "></i>
-                            </a>
-                            <a href="/platos/eliminar/{{plato.0}}"> 
+                            <a href="/platos/editar/{{ plato.0 }}">
+                              <i class="fa fa-edit"></i>
+                            </a> | 
+                            <a href="/platos/eliminar/{{ plato.0 }}"> 
                               <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
