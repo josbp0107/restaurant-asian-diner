@@ -15,15 +15,15 @@
             <div class="register">
                 <h2>Edición</h2>
                 <p class="textED">Id del usuario</p>
-                <p class = idED>{{usercalled[0]}}</p>
-                <form action="{{ url_for('editUserCall')}}" method="POST">
+                <p class = idED>{{idn}}</p>
+                <form action="" method="POST">
                     <input type="text" placeholder="Nombre" class="nombre" id="nombreED" name="nombreED">
                     <input type="text" placeholder="Correo" class="correoED"  name="correoED">
                     <input type="text" placeholder="Usuario" class="usuarioED" name="usuarioED">
                     <input type="text" placeholder="Rol" class="rolED" name="rolED">                    
                     <input type="submit" class="submit" value="Actualizar">
-                    <input type="submit2" class="submit2" value="Regresar">
                 </form>
+                <a class="submit2"href="{{url_for('usuario')}}">Regresar</a>
             </div>
     </div>
     </div>

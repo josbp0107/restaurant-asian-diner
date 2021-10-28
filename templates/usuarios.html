@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Administracion</title>
-
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -132,8 +131,8 @@
                       <td>{{US[3]}}</td>
                       <td>{{US[5]}}</td>
                       <td>
-                        <a href="{{url_for('deleteUserCall', id=US[0])}}">Eliminar </a>
-                        <a href="{{url_for('editUserCall', id=US[0])}}">Editar </a>
+                        <a href="/editUserCall/{{US[0]}}"><i class="fa fa-edit"></i> </a>
+                        <a href="{{url_for('deleteUserCall', id=US[0])}}"><i class="fas fa-trash-alt"></i> </a>
                       </td>
                     </tr>
                     {% endfor %}
