@@ -32,11 +32,25 @@ def login():
     if request.method=='POST':
         usuario = request.form['nombre2']
         clave = request.form['password2']
-        
-        if db.wthigo(usuario, clave) == True:
-            return render_template('index.html')
-        else:
-            return render_template('login.html')
+        with sqlite3.connect("restaurante.db") as con:
+            cur = con.cursor()
+            cur.execute(f'SELECT * FROM usuarios WHERE usuario = "{usuario}"')
+            usuarios = cur.fetchall() 
+            print(len(usuarios))
+            print(usuarios)
+            if len(usuarios) != 0:
+                contraseñaHash = usuarios[0][4]
+                if check_password_hash(contraseñaHash, clave):
+                    session.clear()
+                    session['id'] = usuarios[0][0]
+                    session['nombre'] = usuarios[0][1]
+                    session['correo'] = usuarios[0][2]
+                    session['clave'] = contraseñaHash
+                    session['usuario'] = usuarios[0][3]
+                    session['rol'] = usuarios[0][5]
+                return render_template('index.html')
+            else:
+                return render_template('login.html')
     else:
         return render_template('login.html')
     
@@ -56,7 +70,7 @@ def register():
         clave = request.form['clave']
         clavehash = generate_password_hash(clave)
         db.registrar_usuario(nombre, usuario, correo, clavehash,rol=3)
-        return render_template('login.html')
+        return redirect(url_for('login'))
     else:
         return render_template('register.html')
 
@@ -74,8 +88,7 @@ def editUserCall(id):
     print("-------------------------------------------")
     with sqlite3.connect("restaurante.db") as con:
         if request.method == 'GET':
-            idn = id
-            return render_template('editUserCall.html', idn = idn)
+            return render_template('editUserCall.html')
         if request.method == 'POST':
             cur = con.cursor()
             nombre = request.form['nombreED']

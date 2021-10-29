@@ -27,26 +27,34 @@
         <!--Social-->
 
         <!--MENU-->
-        <div class="nav-main__menu">
-            <a href="{{ url_for('menu') }}" class="nav-main__link-item">
-                Menu
-            </a>
-            <a href="#" class="nav-main__link-item">
-                Perfil
-            </a>
-            <a href="#" class="nav-main__link-item">
-                Platos deseados
-            </a>
-            <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
-                Pedidos
-            </a>
-            <a href="{{ url_for('usuario') }}" class="nav-main__link-item">
-                Gestionar Usuarios
-            </a>
-            <a href="{{ url_for('plato') }}" class="nav-main__link-item">
-                Gestionar Platos
-            </a>
-        </div>
+        
+        {% if session["rol"] == 1 %}
+            <div class="nav-main__menu">
+                <a href="{{ url_for('menu') }}" class="nav-main__link-item">
+                    Menu
+                </a>
+                <a href="#" class="nav-main__link-item">
+                    Perfil
+                </a>
+                <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
+                    Pedidos
+                </a>
+
+                <a href="{{ url_for('usuario') }}" class="nav-main__link-item">
+                    Gestionar Usuarios
+                </a>
+                <a href="{{ url_for('plato') }}" class="nav-main__link-item">
+                    Gestionar Platos
+                </a>
+            </div>
+        {% else %}
+            <div class="nav-main__menu">
+                <a href="{{ url_for('menu') }}" class="nav-main__link-item">
+                    Menu
+                </a>
+            </div>
+        {% endif %}
+        
         <!--LOGO-->
         <div class="logo">
             <a href="{{ url_for('index') }}" class="logoicono">
@@ -58,9 +66,11 @@
         </div>
         <!-- Login-->
         {% if "usuario" in session %}
+            <div class="salirlogout">
                 <a href="{{ url_for('logout') }}" class="logologin">
-                    Cerrar sesion
+                    <i class="fas fa-sign-out-alt"></i>
                 </a>
+            </div>
         {% else %}
             <div class="ingresarlogin">
                 <a href="{{ url_for('login') }}" class="logologin">
