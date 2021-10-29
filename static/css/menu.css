@@ -23,7 +23,7 @@ body{
 }
 
 .menu{
-    padding-top: 150px;
+    padding-top: 100px;
     width:90%;
     max-width:10000px;
     margin: 20px auto;
@@ -52,7 +52,7 @@ body{
 }
 
 .menu .arriba{
-    background:#12203e;
+    background:url(../images/imagesindex/menuback.PNG) center/cover;;
     color:white;
     grid-area:arriba;
     height:500px;

@@ -15,12 +15,12 @@
             <div class="register">
                 <h2>Edición</h2>
                 <p class="textED">Id del usuario</p>
-                <p class = idED>{{idn}}</p>
+                <p class = idED>{{US[0]}}</p>
                 <form action="" method="POST">
-                    <input type="text" placeholder="Nombre" class="nombre" id="nombreED" name="nombreED">
-                    <input type="text" placeholder="Correo" class="correoED"  name="correoED">
-                    <input type="text" placeholder="Usuario" class="usuarioED" name="usuarioED">
-                    <input type="text" placeholder="Rol" class="rolED" name="rolED">                    
+                    <input type="text" placeholder="Nombre" class="nombre" id="nombreED" name="nombreED" value="{{US[1]}}">
+                    <input type="text" placeholder="Correo" class="correoED"  name="correoED" value="{{US[2]}}">
+                    <input type="text" placeholder="Usuario" class="usuarioED" name="usuarioED" value="{{US[3]}}">
+                    <input type="text" placeholder="Rol" class="rolED" name="rolED" value="{{US[5]}}">               
                     <input type="submit" class="submit" value="Actualizar">
                 </form>
                 <a class="submit2"href="{{url_for('usuario')}}">Regresar</a>

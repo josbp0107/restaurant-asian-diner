@@ -17,89 +17,21 @@
         </div>
         <div class="contenido">
             <div class="contbusqueda">
-                <input type="text" placeholder="Ingresa tu busqueda aquí" class="busquedaqui">
+                <form action="{{url_for('search')}}" method="POST">
+                    <input type="text" placeholder="Ingresa tu busqueda aquí" class="busquedaqui" id=busqueda name="busqueda">
+                </form>
             </div>
             <div class="menupag">
+                {% for PLI in PL %}
                 <div class="card">
-                    <img src="../static/images/imagesindex/descarga.jpg" alt="Dumpling">
+                    <img src="../static/img-platos/{{ PLI.3 }}" alt="Dumpling">
                     <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
+                        <h3>{{PLI[1]}}</h3>
+                        <p>{{PLI[2]}}</p>
                         <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="../static/images/imagesindex/roticanai.jpg" alt="Roti-Canai">
-                    <div class="descript">
-                        <h3>Dumpling</h3>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora asperiores sunt rem accusantium, aliquid rerum? Consequuntur fugit aperiam rerum corrupti?</p>
-                        <a href="#">Ver platillo <i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <aside class="sidebar">

@@ -26,7 +26,24 @@ def pedido():
    
 @app.route('/menu', methods=['POST', 'GET'])
 def menu():
-    return render_template('menu.html')
+    with sqlite3.connect("restaurante.db") as con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM platos")
+        platoslist = cur.fetchall()
+        return render_template('menu.html',PL=platoslist)
+
+@app.route('/search', methods=['POST', 'GET'])
+def search():
+    if request.method == 'POST':
+        busqueda = request.form['busqueda']
+        with sqlite3.connect("restaurante.db") as con:
+            print(busqueda)
+            cur = con.cursor()
+            cur.execute(f'SELECT * FROM platos WHERE plato LIKE "%{busqueda}%"')
+            platoslist = cur.fetchall()
+            print(platoslist)
+            return render_template('menu.html',PL=platoslist)
+
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -89,7 +106,10 @@ def editUserCall(id):
     print("-------------------------------------------")
     with sqlite3.connect("restaurante.db") as con:
         if request.method == 'GET':
-            return render_template('editUserCall.html')
+            cur = con.cursor()
+            cur.execute(f"SELECT * FROM usuarios WHERE id = {id}")
+            userlist = cur.fetchall()[0]
+            return render_template('editUserCall.html',US=userlist)
         if request.method == 'POST':
             cur = con.cursor()
             nombre = request.form['nombreED']
