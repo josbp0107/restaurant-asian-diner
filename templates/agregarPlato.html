@@ -105,8 +105,8 @@
                         <h3 class="p-2 flex-grow-1 bd-highlight card-title">Estás agrengando un nuevo plato</h3>                        
                       </div>
                       <!-- /.card-header -->
-                      <form action="" method="POST">
-                      <div class="card-body">
+            <form action="" method="POST" enctype="multipart/form-data">
+              <div class="card-body">
                         <!-- Input addon -->
 
                 <div class="card card-info">
@@ -136,7 +136,7 @@
                         <label for="exampleInputFile">Agregar imagen</label>
                         <div class="input-group">
                             <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="exampleInputFile" name="imagen">
+                            <input type="file" class="custom-file-input" id="exampleInputFile" name="imagen"  accept="image/png, .jpeg, .jpg, image/gif">
                             <label class="custom-file-label" for="exampleInputFile">Escoge una imagen</label>
                             </div>
                             
