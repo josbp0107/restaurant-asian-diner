@@ -23,26 +23,21 @@ body{
 }
 
 .menu{
-    padding-top: 100px;
-    width:90%;
-    max-width:10000px;
-    margin: 20px auto;
+    padding-top: 20px;
+    margin-left: 100px;    
+    margin-right: 100px;
+    width: 90%;
     display: grid;
-    grid-gap:20px;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows:repeat(4,auto);
-
-    grid-template-areas:"arriba arriba arriba arriba" 
-                        "sidebar contenido contenido contenido"
-                        "sidebar contenido contenido contenido"
-                        "sidebar widget-1 widget-1 widget-1"
-                        "footer footer footer footer"
+    grid-gap:5px;
+    grid-template-areas:"arriba arriba" 
+                        "contenido contenido"
+                        "contenido contenido"
+                        "footer footer "
     ;
 }
 .menu .contenido{
-    /* grid-column: 1/3; */
     grid-area:contenido;
-    width:1400px;
+    width:auto;
 
 }
 .menu div,.menu .arriba,.menu .sidebar,.menu .footer{
@@ -52,7 +47,7 @@ body{
 }
 
 .menu .arriba{
-    background:url(../images/imagesindex/menuback.PNG) center/cover;;
+    background:url(../images/imagesindex/menuback.jpg) center/cover;;
     color:white;
     grid-area:arriba;
     height:500px;
@@ -67,37 +62,51 @@ body{
 .menupag{
     height: auto;
     display:grid;
-    text-align: center;
-    align-items:center;
     justify-content: center;
     padding-top:20px;
     gap:25px;
     margin:10px 0;
     margin-top: 200px;
-    grid-template-columns: 1fr;
+    margin-left: 100px;
+    margin-right: 100px;
+    grid-template-columns: 1fr 1fr;
 }
 .menupag .card img{
-    width:100%;
-    height: 200px;
+    width: 100%;;
+    height: 375px;
+    margin: 0px;
+    padding: 0px;
     grid-area:img;
 }
 .menupag .card .descript{
-    grid-area: descript;
+    grid-area:descript;
+    display: grid;
+    justify-content: space-between;
+
 }
+.menupag .card .descript h3{
+    margin: 20px;
+    font-size:25px;
+}
+.menupag .card .descript p{
+    margin: 20px;
+    font-size:16px;
+    height:180px ;
+    overflow-y: auto;
+}
+.menupag .card .descript a{
+    border-top: 1px solid rgb(107, 107, 107);
+    padding-top: 15px;
+}
+
 .menupag .card{
     display:grid;
-    grid-template-columns: 60% 40%;
-    grid-template-areas:"descript img" ;
-}
-.menu .sidebar{
-    background:#FAA43d;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:"img descript";
+    border: 1px solid black;
+    padding: 0px;
+    height: 380px;
 
-    text-align:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:auto;
-    grid-area:sidebar;
 }
 
 .menu .widget-1{
@@ -125,7 +134,7 @@ body{
 .contbusqueda{
     position: absolute;
     margin-top:100px;
-    left:65%;
+    left:50%;
     transform: translate(-50%, -50%);
 }
 

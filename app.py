@@ -37,11 +37,9 @@ def search():
     if request.method == 'POST':
         busqueda = request.form['busqueda']
         with sqlite3.connect("restaurante.db") as con:
-            print(busqueda)
             cur = con.cursor()
             cur.execute(f'SELECT * FROM platos WHERE plato LIKE "%{busqueda}%"')
             platoslist = cur.fetchall()
-            print(platoslist)
             return render_template('menu.html',PL=platoslist)
 
 
@@ -54,8 +52,6 @@ def login():
             cur = con.cursor()
             cur.execute(f'SELECT * FROM usuarios WHERE usuario = "{usuario}"')
             usuarios = cur.fetchall() 
-            print(len(usuarios))
-            print(usuarios)
             if len(usuarios) != 0:
                 contraseñaHash = usuarios[0][4]
                 if check_password_hash(contraseñaHash, clave):
@@ -118,7 +114,6 @@ def editUserCall(id):
             rol = request.form['rolED']
             cur.execute(f"UPDATE usuarios SET nombre = ?, correo = ?, usuario = ?, rol = ? WHERE id = {id}",(nombre, correo, usuario, rol))  
             con.commit()
-            print("hola")         
         return redirect(url_for('usuario'))
 
 
@@ -126,7 +121,6 @@ def editUserCall(id):
 def deleteUserCall():
     with sqlite3.connect("restaurante.db") as con:
         id = request.args.get('id')
-        print(id)
         cur = con.cursor()
         cur.execute(f'DELETE FROM usuarios WHERE id = {id}')     
         con.commit()

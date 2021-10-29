@@ -39,12 +39,39 @@
                 <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
                     Pedidos
                 </a>
+                <a href="{{ url_for('plato') }}" class="nav-main__link-item">
+                    Gestionar Platos
+                </a>
+                <a href="{{ url_for('usuario') }}" class="nav-main__link-item">
+                    Gestionar Usuarios
+                </a>
+            </div>
+        {% elif session["rol"] == 2 %}
+            <div class="nav-main__menu">
+                <a href="{{ url_for('menu') }}" class="nav-main__link-item">
+                    Menu
+                </a>
+                <a href="#" class="nav-main__link-item">
+                    Perfil
+                </a>
+                <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
+                    Pedidos
+                </a>
 
                 <a href="{{ url_for('usuario') }}" class="nav-main__link-item">
                     Gestionar Usuarios
                 </a>
-                <a href="{{ url_for('plato') }}" class="nav-main__link-item">
-                    Gestionar Platos
+            </div>
+        {% elif session["rol"] == 3 %}
+            <div class="nav-main__menu">
+                <a href="{{ url_for('menu') }}" class="nav-main__link-item">
+                    Menu
+                </a>
+                <a href="#" class="nav-main__link-item">
+                    Perfil
+                </a>
+                <a href="{{ url_for('pedido') }}" class="nav-main__link-item">
+                    Pedidos
                 </a>
             </div>
         {% else %}
@@ -54,6 +81,8 @@
                 </a>
             </div>
         {% endif %}
+
+        
         
         <!--LOGO-->
         <div class="logo">
