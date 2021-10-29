@@ -25,10 +25,10 @@ def mostrar_platos():
         return platos
 
 
-def agregar_plato(plato, descripcion, precio):
+def agregar_plato(plato, descripcion, filename, precio):
     with sqlite3.connect(CONEXION) as con:
         cur = con.cursor()
-        cur.execute('INSERT INTO platos (plato, descripcion, imagen, precio, id_disponiblidad) VALUES (?,?,?,?,?)', (plato, descripcion, 'imagen', float(precio), 1)) 
+        cur.execute('INSERT INTO platos (plato, descripcion, imagen, precio, id_disponiblidad) VALUES (?,?,?,?,?)', (plato, descripcion, filename, float(precio), 1)) 
         con.commit()
 
 
@@ -39,10 +39,10 @@ def eliminar_plato(id):
         con.commit()
 
 
-def editar_plato(id,plato, descripcion, precio):
+def editar_plato(id,plato, descripcion, filename, precio):
     with sqlite3.connect(CONEXION) as con:
         cur = con.cursor()
-        cur.execute(f'UPDATE platos SET plato=?, descripcion=?, imagen=?, precio=?, id_disponiblidad=? WHERE id={id}', (plato, descripcion, 'imagen', precio,1))
+        cur.execute(f'UPDATE platos SET plato=?, descripcion=?, imagen=?, precio=?, id_disponiblidad=? WHERE id={id}', (plato, descripcion, filename, precio,1))
         con.commit()
       
 

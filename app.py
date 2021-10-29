@@ -9,6 +9,7 @@ import sqlite3
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+app.config['UPLOAD_IMAGE'] = "static/img-platos"
 
 
 @app.route('/')
@@ -125,8 +126,11 @@ def agregar_platos():
     if request.method == 'POST':
         plato = request.form['plato']
         descripcion = request.form['descripcion']
+        f = request.files['imagen']
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_IMAGE'], filename))
         precio = float(request.form['precio'])
-        db.agregar_plato(plato, descripcion, precio )
+        db.agregar_plato(plato, descripcion, filename, precio )
         return redirect(url_for('plato'))
     else:
         return render_template('agregarPlato.html')
@@ -144,8 +148,11 @@ def editar_plato(id):
     if request.method == 'POST':
         plato = request.form['plato']
         descripcion = request.form['descripcion']
+        f = request.files['imagen']
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_IMAGE'], filename))
         precio = float(request.form['precio'])
-        db.editar_plato(id,plato,descripcion,precio)
+        db.editar_plato(id,plato,descripcion,filename,precio)
         return redirect(url_for('plato'))
 
     return render_template('editarPlato.html')
