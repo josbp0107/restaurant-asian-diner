@@ -14,8 +14,11 @@ app.config['UPLOAD_IMAGE'] = "static/img-platos"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
-
+    with sqlite3.connect("restaurante.db") as con:
+        cur = con.cursor()
+        cur.execute("SELECT * FROM platos")
+        platoslist = cur.fetchall()
+        return render_template('index.html',PL=platoslist)
 
 
 

@@ -46,7 +46,8 @@
                     Gestionar Usuarios
                 </a>
             </div>
-        {% elif session["rol"] == 2 %}
+        {% endif %}
+        {% if session["rol"] == 2 %}
             <div class="nav-main__menu">
                 <a href="{{ url_for('menu') }}" class="nav-main__link-item">
                     Menu
@@ -62,7 +63,8 @@
                     Gestionar Usuarios
                 </a>
             </div>
-        {% elif session["rol"] == 3 %}
+        {% endif %}
+        {% if session["rol"] == 3 %}
             <div class="nav-main__menu">
                 <a href="{{ url_for('menu') }}" class="nav-main__link-item">
                     Menu

@@ -201,26 +201,16 @@ body{
 }
 
 .contenedor .widget-2{
-    color:white;
-    height: auto;
-    text-align: center;
-    align-items:center;
-    justify-content: center;
     grid-area:widget-2;
-    padding-top:20px;
-    display:grid;
-    gap:25px;
-    margin:10px 0;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 1fr 1fr;
 }
 
-.contenedor .widget-2 .card img{
+/* .contenedor .widget-2 .card img{
     width:100%;
     height: 250px;
-}
+} */
 
-.contenedor .widget-2 h2{
+.contenedor .widget-2 h2,.contenedor .widget-2 h2 a{
+    text-decoration: none;
     width: 95%;
     grid-column:1/-1 ;
     margin-left: auto;
@@ -229,8 +219,7 @@ body{
     color:#c2c2c2;
     background:var(--color-red);
     border-radius:30px;
-    align-items: center;
-    justify-items: center;
+    text-align: center;
 }
 .contenedor .footer{
     background:#12203e;
@@ -244,4 +233,53 @@ body{
     margin-bottom:0;
     height: 800px;
     position: absolute;
+}
+
+.menupag{
+    width:100%;
+    height: auto;
+    display:grid;
+    justify-content: center;
+    padding-top:20px;
+    margin-top:100px;
+    gap:25px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr 1fr;
+}
+.menupag .card img{
+    width: 100%;;
+    height: 375px;
+    margin: 0px;
+    padding: 0px;
+    grid-area:img;
+}
+.menupag .card .descript{
+    grid-area:descript;
+    display: grid;
+    justify-content: space-between;
+
+}
+.menupag .card .descript h3{
+    margin: 20px;
+    font-size:25px;
+}
+.menupag .card .descript p{
+    margin: 20px;
+    font-size:16px;
+    height:180px ;
+    overflow-y: auto;
+}
+.menupag .card .descript a{
+    border-top: 1px solid rgb(107, 107, 107);
+    padding-top: 15px;
+}
+
+.menupag .card{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:"img descript";
+    border: 1px solid black;
+    padding: 0px;
+    height: 380px;
+
 }
