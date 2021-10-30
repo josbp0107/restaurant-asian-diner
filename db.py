@@ -63,6 +63,14 @@ def editar_plato(id,plato, descripcion, filename, precio):
         cur = con.cursor()
         cur.execute(f'UPDATE platos SET plato=?, descripcion=?, imagen=?, precio=?, id_disponiblidad=? WHERE id={id}', (plato, descripcion, filename, precio,1))
         con.commit()
+
+
+def cargar_plato(id):
+    with sqlite3.connect(CONEXION) as con:
+        cur = con.cursor()
+        cur.execute(f"SELECT * FROM platos WHERE id = {id}")
+        plato = cur.fetchall()[0]
+        return plato
       
 
 
