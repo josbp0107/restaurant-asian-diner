@@ -36,52 +36,13 @@
                         <i class="fas fa-chevron-left"></i>
                     </button>
                     <div class="elementos_lista">
+                    {% for PLI in PL %}
                         <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
+                            <h2 class = "tituloimg">{{PLI[1]}}</h2>
+                            <img src="../static/img-platos/{{ PLI.3 }}" alt="Dumpling">
+                            <p>{{PLI[2]}}</p>
                         </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">o</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
-                        <div class="elemento">
-                            <h2 class = "tituloimg">TITULO</h2>
-                            <img src="../static/images/imagesindex/sushi.jpg" alt="sushi">
-                            <p>descripcion</p>
-                        </div>
+                    {% endfor %}
                     </div>
                     <button aria-label="siguiente" class="carrouselsiguiente">
                         <i class="fas fa-chevron-right"></i>

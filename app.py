@@ -167,8 +167,11 @@ def editar_plato(id):
         plato = request.form['plato']
         descripcion = request.form['descripcion']
         f = request.files['imagen']
-        filename = secure_filename(f.filename)
-        f.save(os.path.join(app.config['UPLOAD_IMAGE'], filename))
+        if f.filename !="":
+            filename = secure_filename(f.filename)
+            f.save(os.path.join(app.config['UPLOAD_IMAGE'], filename))
+        else:
+            filename = request.form['imagen']
         precio = float(request.form['precio'])
         db.editar_plato(id,plato,descripcion,filename,precio)
         return redirect(url_for('plato'))
