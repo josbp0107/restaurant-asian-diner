@@ -158,7 +158,8 @@ def platos_eliminar(id):
 @app.route('/platos/editar/<id>', methods=['POST', 'GET'])
 def editar_plato(id):
     if request.method == 'GET':
-        return render_template('editarPlato.html')
+        plato = db.cargar_plato(id)
+        return render_template('editarPlato.html', plato=plato)
     if request.method == 'POST':
         plato = request.form['plato']
         descripcion = request.form['descripcion']
