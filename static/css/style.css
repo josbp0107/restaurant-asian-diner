@@ -107,6 +107,10 @@ body{
     margin:0;
     padding:0;
 }
+.elemento p{
+    height:200px ;
+    overflow-y:auto;
+}
 
 
 .contenido .carrousel-contenido .elemento{
@@ -114,6 +118,7 @@ body{
     padding:20px;
     background:#f6f6f6;
     border:1px solid black;
+    height:500px;
 }
 .contenido .carrousel-contenido{
     margin-left: 225px;
