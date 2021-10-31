@@ -1,10 +1,9 @@
-from flask import Flask, render_template, url_for, redirect, request,session,flash
+from flask import Flask, render_template, url_for, redirect, request,session
 from werkzeug.utils import secure_filename
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import db
 import sqlite3
-
 
 
 app = Flask(__name__)
@@ -21,12 +20,11 @@ def index():
         return render_template('index.html',PL=platoslist)
 
 
-
-
 @app.route('/pedidos', methods=['POST', 'GET'])
 def pedido():
     return render_template('pedido.html')
-   
+
+
 @app.route('/menu', methods=['POST', 'GET'])
 def menu():
     with sqlite3.connect("restaurante.db") as con:
@@ -34,6 +32,7 @@ def menu():
         cur.execute("SELECT * FROM platos")
         platoslist = cur.fetchall()
         return render_template('menu.html',PL=platoslist)
+
 
 @app.route('/search', methods=['POST', 'GET'])
 def search():
@@ -70,7 +69,8 @@ def login():
                 return render_template('login.html')
     else:
         return render_template('login.html')
-    
+
+
 @app.route('/logout')
 def logout():
     if 'usuario' in session:
@@ -90,6 +90,7 @@ def register():
         return redirect(url_for('login'))
     else:
         return render_template('register.html')
+
 
 @app.route('/usuarios', methods=['POST', 'GET'])
 def usuario():
@@ -130,8 +131,6 @@ def deleteUserCall():
         return redirect(url_for('usuario'))
 
 
-
-
 @app.route('/platos', methods=['POST', 'GET'])
 def plato():
     platos = db.mostrar_platos()
@@ -151,6 +150,7 @@ def agregar_platos():
         return redirect(url_for('plato'))
     else:
         return render_template('agregarPlato.html')
+
 
 @app.route('/platos/eliminar/<id>')
 def platos_eliminar(id):
@@ -174,6 +174,3 @@ def editar_plato(id):
         return redirect(url_for('plato'))
 
     return render_template('editarPlato.html')
-
-
-    

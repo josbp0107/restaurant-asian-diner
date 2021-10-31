@@ -1,9 +1,10 @@
 import sqlite3
-from flask import Flask, render_template, url_for, redirect, request,session,flash
-from werkzeug.utils import secure_filename
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask import session
+from werkzeug.security import check_password_hash
+
 
 CONEXION = 'restaurante.db'
+
 
 def registrar_usuario(nombre, usuario, correo, clave, rol):
     with sqlite3.connect(CONEXION) as con:
@@ -11,6 +12,7 @@ def registrar_usuario(nombre, usuario, correo, clave, rol):
         cur.execute('INSERT INTO usuarios(nombre,correo,usuario,clave,rol) VALUES (?,?,?,?,?)', (nombre, correo, usuario,clave,rol)) 
         con.commit()
         
+
 def wthigo(usuario,clave):
     with sqlite3.connect("restaurante.db") as con:
         cur = con.cursor()
@@ -30,11 +32,6 @@ def wthigo(usuario,clave):
                 session['rol'] = usuarios[0][5]
             return True
     
-
-
-
-
-
 
 def mostrar_platos():
     with sqlite3.connect(CONEXION) as con:
@@ -71,29 +68,3 @@ def cargar_plato(id):
         cur.execute(f"SELECT * FROM platos WHERE id = {id}")
         plato = cur.fetchall()[0]
         return plato
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-""" def check_password(hashed_clave, usuario_clave):
-    return hashed_clave == hashlib.sha1(usuario_clave.encode()).hexdigest() """
-
-
-
-
